@@ -1,36 +1,6 @@
 {
   "persons": [
     {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
-      "id": 3
-    },
-    {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
-      "id": 4
-    },
-    {
-      "name": "route",
-      "number": "89562341",
-      "id": 5
-    },
-    {
-      "name": "Arto Hellas",
-      "number": "58479632",
-      "id": 6
-    },
-    {
-      "name": "Arto Hellas",
-      "number": "58479632",
-      "id": 7
-    },
-    {
-      "name": "fdhgnhg",
-      "number": "56545468",
-      "id": 8
-    },
-    {
       "name": "Arto Hellas",
       "number": "",
       "id": 9
@@ -81,11 +51,6 @@
       "id": 31
     },
     {
-      "name": "",
-      "number": "",
-      "id": 32
-    },
-    {
       "name": " hgjuh",
       "number": "458852.",
       "id": 33
@@ -121,14 +86,14 @@
       "id": 39
     },
     {
-      "name": "freo",
-      "number": "523461",
+      "name": "kone",
+      "number": "56230145",
       "id": 40
     },
     {
-      "name": "fhuihjh",
-      "number": ".124587",
-      "id": 41
+      "name": "fetrujyiu",
+      "number": "457869",
+      "id": 42
     }
   ]
 }

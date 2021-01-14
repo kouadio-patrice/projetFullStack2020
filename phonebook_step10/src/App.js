@@ -14,15 +14,15 @@ const App = (props) => {
   const [showAll ,setShowAll] = useState('')
   const [successMessage , setSuccesMessage] = useState('Display message succes')
   const [errorMessage, setErrorMessage ] = useState('some error happened...')
- 
-     useEffect(() => {
+ const effet=() => {
       console.log('effect');
       personService
         .getAll()
         .then(initialpersons =>{
           setPersons(initialpersons);
          })
-    },[])
+    }
+     useEffect(effet,[])
 
     let personToShow = persons; 
      const handlePersonChange = (event) =>{
@@ -108,11 +108,11 @@ const App = (props) => {
     const handlerClickDelete = (id) =>{
       axios
       .delete(`http://localhost:3001/persons/${id}`)
-      .then(response =>{
-          setPersons(persons.concat(response.data));
+      .then(response =>{ 
+          setPersons(persons.filter(val => val.id !== id));
           setNewName('');
           setNewNumber('');
-        })
+          console.log('respose data',response.data)       })
         .catch(error=>  {
 
           setErrorMessage( error.message)
@@ -167,7 +167,7 @@ const App = (props) => {
           <p key={i}>{ nom.name}  {nom.number} 
              <button  onClick={ () => {
                 if(window.confirm('voulez vous vraiment supprimer ?')) {
-                  handlerClickDelete(i)
+                  handlerClickDelete(nom.id)
                 }
               }
             }
