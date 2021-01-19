@@ -166,7 +166,7 @@ const App = (props) => {
         {personToShow.map((nom,i) =>
           <p key={i}>{ nom.name}  {nom.number} 
              <button  onClick={ () => {
-                if(window.confirm('voulez vous vraiment supprimer ?')) {
+                if(window.confirm(`delete  ${nom.name} ?`)) {
                   handlerClickDelete(nom.id)
                 }
               }
