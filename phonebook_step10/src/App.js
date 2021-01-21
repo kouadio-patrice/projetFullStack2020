@@ -14,6 +14,7 @@ const App = (props) => {
   const [showAll ,setShowAll] = useState('')
   const [successMessage , setSuccesMessage] = useState('Display message succes')
   const [errorMessage, setErrorMessage ] = useState('some error happened...')
+
  const effet=() => {
       console.log('effect');
       personService
@@ -32,6 +33,7 @@ const App = (props) => {
     const handleNumber = (event) =>{
        setNewNumber(event.target.value)
     }
+    
 
     const toggleImportanceOf = (id) => {
       const person = persons.find(num => num.id === id)
@@ -166,7 +168,7 @@ const App = (props) => {
         {personToShow.map((nom,i) =>
           <p key={i}>{ nom.name}  {nom.number} 
              <button  onClick={ () => {
-                if(window.confirm(`delete  ${nom.name} ?`)) {
+                if(window.confirm('delete  {nom.name} ?')) {
                   handlerClickDelete(nom.id)
                 }
               }
