@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom';
-
+import './index.css';
 const Button = (props) =>{
   const {onclick ,text} = props
   return(
@@ -12,7 +12,16 @@ const Statistic = (props) =>{
   const {text,value ,pers} = props
 return(
 <div>
-  {text} {value} {pers}
+  <table>
+    <tbody>
+     <tr>
+         <td>{text} </td>
+         <td> {value}  {pers}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
 </div>
 )}
 
@@ -24,20 +33,20 @@ const Statistics = (props) =>{
   if(!allclick){
     return(
       <div>
-        No feedback given
+        no feedback given
       </div>
     )
   } else{
 
     return(
-      <di>
+      <div>
          <Statistic text ='good' value ={good}  />
      <Statistic text ='neutral' value ={neutral}  />
-     <Statistic text ='bad' value ={bad}  />
+     <Statistic text ='bad'   value =   {bad}  />
      <Statistic text ='all' value ={all}  />
      <Statistic text ='average' value ={average.toFixed(1)}  />
      <Statistic text ='positive' value ={positive.toFixed(1)} pers='%'  />
-      </di>
+      </div>
     )
   }
 }
