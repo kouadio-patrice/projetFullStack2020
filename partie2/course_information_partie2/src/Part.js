@@ -1,12 +1,10 @@
 //import App from './App'
 const Part = (props) => {
-  const {name,exercice} = props
-  console.log('partie part' ,props)
+  const {partie} = props
+  console.log('partie part' ,partie)
     return(
-      <div>
-          <p>{name.name} {exercice.exercises} </p>
-      </div>
-      
+        <ul> {partie.name} {partie.exercises} </ul>  
+
     )
   }
   export default Part;
