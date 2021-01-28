@@ -7,7 +7,6 @@ const Button = (props) => {
        <button onClick={onClick}>
            {text}
        </button>
-  
      
   )
 }
@@ -26,14 +25,7 @@ const App = (props) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  
-
   console.log('selected',selected)
-  
-  
- // points = points.fill(copy[selected] ,selected, selected)
-  //console.log('points',points)
-  
   const handlerVote = (selected) => {
     console.log('voteh',selected)
     const copy = [...vote]
