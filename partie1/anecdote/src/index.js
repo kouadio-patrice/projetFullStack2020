@@ -15,8 +15,9 @@ const Button = (props) => {
 
 const App = (props) => {
   const {anecdotes}= props 
-  const [selected, setSelected] = useState(1)
-  const [counter ,setCompter] = useState([0,0,0,0,0,0])
+  const [selected, setSelected] = useState(0)
+  const [vote, setVote] = useState([0,0,0,0,0,0])
+  
   
   const haleartoir = (max,min) =>{
     min = 0
@@ -28,32 +29,37 @@ const App = (props) => {
   
 
   console.log('selected',selected)
-  let points = [0, 0,0,0,0,0]
-  const copy = [...points]
-  copy[selected] += 1
-  points = points.fill(copy[selected],selected,selected)
-  console.log('points',points)
   
-  const handlerVote = () => {
-    setCompter(copy[selected]++ )
-   
+  
+ // points = points.fill(copy[selected] ,selected, selected)
+  //console.log('points',points)
+  
+  const handlerVote = (selected) => {
+    console.log('voteh',selected)
+    const copy = [...vote]
+    copy[selected] += 1
+    setVote(copy)
   }
+  
   const handlerClic = () => {
-    setCompter(copy[selected])
      setSelected(haleartoir  )
   }
-  console.log('copy',copy)
-console.log('pcon',counter)
+ const found = vote.find(Element => Element >= vote[selected] )
+ 
+ console.log('found',found)
+
   return (
     <div>
       <p>
       {anecdotes[selected]}
       </p>
-       <p> has {counter} vote </p>
+       <p> has {vote[selected]} vote </p>
     
-      <Button onClick = {handlerVote} text='vote'/>
+      <Button onClick = {() => handlerVote(selected)} text='vote'/>
        <Button onClick= {handlerClic} text='next anecdote'/>
-       
+       <p>
+      {anecdotes[found]}
+      </p>
     </div>
   )
 }
